@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia de Entretenimiento</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="icon" type="image/png" href="assets/img/logo_principal.png">
+</head>
+<body>
+    <video autoplay loop muted playsinline poster="assets/img/fondo.png">
+        <source src="https://media.istockphoto.com/id/1209449659/es/v%C3%ADdeo/fondo-rosa-en-bucle-simple-con-formas-geom%C3%A9tricas.mp4?s=mp4-640x640-is&k=20&c=fj-8LeIEMeiApau7mWKsEamu5TQXPkPW7D2KSDVn3gA=" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>    
+    <div id="trivia-container" class="container">  
+        <div class="text-container">
+            <div class="text-1" id="saludo1"></div>
+            <div class="text-2" id="saludo2"></div>
+        </div>                
+        <h2>Adivina con emojis</h2>
+        <h3>Por cada respuesta correcta obtendrás</h3> <h3 class="green"> 5 puntos</h3>   
+        <h2 class="text">Seleccione la categoría:</h2>
+        <div class="opciones-container">
+            <!-- Ancla 1 -->
+            <div class="opcion-container">
+                <p>Pelicula</p>
+                <br>
+                <a href="peliculas.html" class="boton" >
+                    <img src="assets/img/logo_pelicula.png" alt="Botón Películas" class="imagen-logo">
+                </a>
+            </div>
+
+            <!-- Ancla 2 -->
+            <div class="opcion-container">
+                <p>Cancion</p>
+                <br>
+                <a href="cancion.html" class="boton">
+                    <img src="assets/img/logo_musica.png" alt="Botón Música" class="imagen-logo">
+                </a>
+            </div>
+
+            <!-- Ancla 3 -->
+            <div class="opcion-container">
+                <p>Videojuego</p>
+                <br>
+                <a href="videojuego.html" class="boton">
+                    <img src="assets/img/logo_videojuego.png" alt="Botón Videojuegos" class="imagen-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/segundo.js"></script>
+</body>
+</html>

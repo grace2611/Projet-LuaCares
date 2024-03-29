@@ -127,14 +127,14 @@ body {
 }
 
 .btn {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: transparent; 
   border: 3px solid #ececec71;
   cursor: pointer; 
 }
 
 .mi-boton {
-  border-radius: 27px;
+  border-radius: 17px;
   background-color: #c19b6fa5;
   border: none;
   cursor: pointer;
@@ -178,11 +178,35 @@ body {
   display: inline-block; 
 }
 
+@media (max-width: 767px) {
+  .main-container {
+    width: 100%;
+    max-width: 320px; /* Ancho fijo para dispositivos móviles */
+    left: 0;
+    transform: none;
+  }
+}
+
 /* Responsive */
 @media (max-width: 870px) {
   body {
     background-image: url('https://i.ibb.co/GQgtyGs/fondo-2.png');
+    overflow-y: auto;
+    background-size: auto 100%;
+    background-repeat: no-repeat; 
   }
+ 
+  .imagen-claro, .imagen-oscuro {
+    width: 1%;
+    height: auto;
+    animation: slideIn 0.9s ease-out forwards;
+
+  }
+
+  .main-image {
+    display: none;
+  }
+
   .circle-red {
     min-height: 800px;
     height: 100vh;

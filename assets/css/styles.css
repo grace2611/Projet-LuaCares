@@ -39,8 +39,12 @@ body {
   border-radius: 20px;
 }
 
-.main-image{
+.main-image, .main-image2{
   filter: drop-shadow(var(--shadow-img));
+}
+
+.main-image2{
+  display: none;
 }
 
 :root {
@@ -197,7 +201,6 @@ body {
     overflow-y: auto;
     padding-bottom: 8%;
   }
-
   
 .toggle-container {
   width: 100%; 
@@ -221,7 +224,7 @@ body {
     animation: slideIn 0.9s ease-out forwards !important;
 }
 
-.main-image{
+.main-image2{
   width: 80%;
   height: auto;
   display: block;

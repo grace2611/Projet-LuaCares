@@ -81,7 +81,7 @@ body {
 .toggle-container {
   position: relative;
   display: inline-block;
-  width: 60px; 
+  width: 70px; 
   height: 34px;
 }
 .toggle-checkbox {
@@ -115,7 +115,7 @@ body {
   background: linear-gradient(90deg, #09165c, #5297e6);
 }
 .toggle-checkbox:checked + .toggle-slider:before {
-  transform: translateX(26px);
+  transform: translateX(35px);
 }
 .toggle-icon {
   position: absolute;
@@ -196,9 +196,18 @@ body {
   .main-container {
     overflow-y: auto;
   }
+  
+  .toggle-checkbox:checked + .toggle-slider:before {
+    transform: translateX(19px);
+  }
+
+  .main-title{
+    font-size: 30px;
+  }
+
   .imagen2-oscuro, .imagen2-claro {
     display: block !important;
-    width: 40%; 
+    width: 97%; 
     height: auto !important;
     position: absolute;
     top: 0; 

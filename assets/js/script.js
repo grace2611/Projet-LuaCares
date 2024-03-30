@@ -21,3 +21,5 @@ if (currentTheme === 'dark') {
   toggleSwitch.checked = true; 
 }
 switchTheme();
+
+//Nav fijo

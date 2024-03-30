@@ -200,14 +200,17 @@ body {
   .main-container {
     overflow-y: auto;
     padding-bottom: 8%;
+    padding-left: 1% !important;
+    margin-bottom: 5%;
+    margin-top: 1%;
   }
   
-.toggle-container {
-  width: 100%; 
-}
+  .toggle-container {
+    width: 100%; 
+  }
 
   .toggle-checkbox:checked + .toggle-slider:before {
-    transform: translateX(19px);
+    transform: translateX(23px);
   }
 
   .main-title{
@@ -216,7 +219,7 @@ body {
 
   .imagen2-oscuro, .imagen2-claro {
     display: block !important;
-    width: 97%; 
+    width: 80%; 
     height: auto !important;
     position: absolute;
     top: 0; 

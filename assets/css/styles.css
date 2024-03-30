@@ -24,10 +24,14 @@ body {
   z-index: 1;
   border-radius: 20px;
   width: calc(100% - 40px); 
+  height: 90%;
   max-width: 100%;
   left: 50%;
   transform: translateX(-50%);
   backdrop-filter: blur(9px);
+  height: 96%;
+  max-height: 95%; 
+  overflow-x: hidden; 
 }
 
 .imagen-container{
@@ -178,33 +182,57 @@ body {
   display: inline-block; 
 }
 
-@media (max-width: 767px) {
-  .main-container {
-    width: 100%;
-    max-width: 320px; /* Ancho fijo para dispositivos móviles */
-    left: 0;
-    transform: none;
-  }
+.ocultar{
+  display: none;
 }
 
 /* Responsive */
-@media (max-width: 870px) {
-  body {
-    background-image: url('https://i.ibb.co/GQgtyGs/fondo-2.png');
+@media (min-width: 800px) {
+  .main-container {
+    overflow-y: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .main-container {
     overflow-y: auto;
-    background-size: auto 100%;
-    background-repeat: no-repeat; 
   }
- 
-  .imagen-claro, .imagen-oscuro {
-    width: 1%;
-    height: auto;
-    animation: slideIn 0.9s ease-out forwards;
+  .imagen2-oscuro, .imagen2-claro {
+    display: block !important;
+    width: 40%; 
+    height: auto !important;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    animation: slideIn 0.9s ease-out forwards !important;
+}
 
+  .imagen2-container {
+    position: relative;
   }
 
-  .main-image {
-    display: none;
+  .imagen2-oscuro {
+    display: none !important;
+    top: 0;
+    left: 0;
+  }
+  
+  .bg-dark-toggle .imagen2-claro {
+    display: none !important;
+    top: 0;
+    left: 0;
+  }
+  
+  .bg-dark-toggle .imagen2-oscuro {
+    display: inline-block !important; 
+  }
+
+  .contenedor-toggle {
+    background: #ffcfa035;
+    border-radius: 20px;
+  }
+
+  .imagen-container {
+    display: none !important;
   }
 
   .circle-red {

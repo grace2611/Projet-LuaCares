@@ -3,108 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Mode</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Mi Página Responsive</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .container {
-      text-align: center;
-      padding-top: 100px;
-    }
-    .toggle-container {
-      position: relative;
-      display: inline-block;
-      width: 60px; 
-      height: 34px;
-    }
-    .toggle-checkbox {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .toggle-slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, #ff6a00, #ee0979);
-      transition: background 0.4s;
-      border-radius: 34px;
-    }
-    .toggle-slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: transform 0.4s;
-      border-radius: 50%;
-    }
-    .toggle-checkbox:checked + .toggle-slider {
-      background: linear-gradient(90deg, #2196F3, #1ee535);
-    }
-    .toggle-checkbox:checked + .toggle-slider:before {
-      transform: translateX(26px);
-    }
-    .toggle-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white; /* Color del ícono */
-    }
-    .toggle-icon.dark {
-      left: 5px; /* Posición del ícono "sun" */
-    }
-    .toggle-icon.moon {
-      right: 5px; /* Posición del ícono "moon" */
-    }
-    .bg-dark-toggle {
-      background-color: #111 !important;
-      color: #fff !important;
-    }
-  </style>
 </head>
-<body class="bg-light">
-  <div class="container">
-    <h1>LÚA CARES</h1>  
-    <h2>¿Cual es nuestro objetivo?</h2>
-    <p>En Lua Cares, nos dedicamos a proporcionar asesoramiento y recursos informativos sobre el cuidado de la piel. Nuestra misión es ayudar a las personas a comprender su tipo de piel, desarrollar rutinas efectivas y tomar decisiones informadas sobre productos de skincare antes de su compra. Desde consejos prácticos hasta recomendaciones de productos, estamos comprometidos a ayudarte a lograr una piel sana y radiante.</p>
-    <h2>¿Conoces tu tipo de piel?</h2>
-    <a href="#" id="button" class="btn btn-primary">SI, LA CONOZCO</a>
-    <a href="test.html">NO ESTOY SEGURA</a>
-    <label class="toggle-container">
-      <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
-      <span class="toggle-slider"></span>
-      <i class="bi bi-brightness-high toggle-icon light"></i>
-      <i class="bi bi-moon toggle-icon dark"></i>
-    </label>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Contenido Izquierdo</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec turpis non libero viverra consequat.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Contenido Derecho</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec turpis non libero viverra consequat.</p>
+    </div>
   </div>
+</div>
 
-  <script>
-    const toggleSwitch = document.getElementById('darkModeToggle');
-
-    function switchTheme(e) {
-      if (e.target.checked) {
-        document.body.classList.add('bg-dark-toggle');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.body.classList.remove('bg-dark-toggle');
-        localStorage.setItem('theme', 'light');
-      }    
-    }
-
-    toggleSwitch.addEventListener('change', switchTheme, false);
-
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    if (currentTheme === 'dark') {
-      toggleSwitch.checked = true;
-      document.body.classList.add('bg-dark-toggle');
-    }
-  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

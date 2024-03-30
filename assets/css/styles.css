@@ -195,8 +195,14 @@ body {
 @media (max-width: 767px) {
   .main-container {
     overflow-y: auto;
+    padding-bottom: 8%;
   }
+
   
+.toggle-container {
+  width: 100%; 
+}
+
   .toggle-checkbox:checked + .toggle-slider:before {
     transform: translateX(19px);
   }
@@ -213,6 +219,12 @@ body {
     top: 0; 
     left: 0; 
     animation: slideIn 0.9s ease-out forwards !important;
+}
+
+.main-image{
+  width: 80%;
+  height: auto;
+  display: block;
 }
 
   .imagen2-container {

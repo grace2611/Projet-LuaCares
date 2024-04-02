@@ -1,28 +1,100 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Responsive</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barra de Progreso Animada</title>
+<style>
+  #progressBarContainer {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  #progressBar {
+    width: 100%;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  #progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(45deg, #4caf50, #a8eb12);
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+  }
+
+  #progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    transition: left 0.5s ease-in-out; /* Aplicamos la misma transición que a la barra */
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Contenido Izquierdo</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec turpis non libero viverra consequat.</p>
-    </div>
-    <div class="col-md-6">
-      <h2>Contenido Derecho</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec turpis non libero viverra consequat.</p>
-    </div>
+<button id="startButton">Incrementar Progreso</button>
+<div id="progressBarContainer">
+  <div id="progressBar">
+    <div id="progress"></div>
+    <div id="progressText">0%</div>
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  var width = 0; // Inicializamos el ancho de la barra de progreso
+  var progressBar = document.getElementById("progress"); // Referencia al elemento de la barra de progreso
+  var progressText = document.getElementById("progressText"); // Referencia al texto de progreso
+
+  // Función para actualizar el texto de progreso
+  function updateProgressText() {
+    progressText.textContent = width + "%";
+    // Actualizamos la posición del texto de progreso
+    progressText.style.left = `calc(${width}% - 50px)`; // Ajustamos la posición del texto en función del ancho de la barra de progreso
+  }
+
+  // Función para incrementar la barra de progreso
+  function incrementarProgreso() {
+    // Si el ancho es menor que 100%, incrementamos
+    if (width < 100) {
+      width += 10; // Incrementamos 10%
+      progressBar.style.width = width + "%"; // Actualizamos el ancho de la barra de progreso
+      updateProgressText(); // Actualizamos el texto de progreso
+    }
+  }
+
+  // Evento al presionar el botón
+  document.getElementById("startButton").addEventListener("click", function() {
+    incrementarProgreso(); // Llamamos a la función para incrementar el progreso
+  });
+</script>
+
 </body>
 </html>

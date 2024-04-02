@@ -1,72 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LÚA CARES</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-   <link rel="stylesheet" href="assets/css/styles.css">
-   <link rel="icon" href="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LÚA CARES</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" type="image/png">
 </head>
 <body> 
-  <div class="container-fluid d-flex vh-100 justify-content-center align-items-center">
-    <div class="main-container pl-4"> 
+  <div class="container-fluid d-flex vh-100">
+    <div class="main-container p-2 mt-3 px-4 bg-dark-toggle"> 
       <div class="row">
-        <!-- Primera sección: imagen-container -->
-        <div class="imagen-container my-2 p-0 col-md-4 d-flex flex-column align-items-center justify-content-center text-center">
-          <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Claro" class="imagen-claro img-fluid w-25">
-          <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Oscuro" class="imagen-oscuro img-fluid w-25">
-          <h1 class="title">LÚA CARES</h1>
-          <img src="https://i.ibb.co/98jXDyg/Imagen2-1.png" alt="imagen2" class="main-image mb-3 w-70">
+        <div class="imagen-container p-0 col-md-12 d-flex flex-column">
+          <div class="row">
+            <div class="col-md-7 d-flex justify-content-end">
+              <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Claro" class="imagen-claro img-fluid w-25">
+              <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Oscuro" class="imagen-oscuro img-fluid w-25">
+            </div>
+            <div class="col-md-5 d-flex justify-content-end p-2 pr-4">
+              <label class="toggle-container">
+                <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
+                <span class="toggle-slider"></span>
+                <i class="bi bi-brightness-high toggle-icon light mx-1"></i>
+                <i class="bi bi-moon toggle-icon dark mx-1"></i>
+              </label>
+            </div>
+            <div class="col-md-7 d-flex justify-content-end">
+              <h1 class="title">LÚA CARES</h1>
+            </div>
+          </div>
         </div>
-        <!-- Segunda sección -->
-        <div class="col-md-8">
-          <div class="row contenedor-toggle m-2 p-0">
-            <div class="col-3">
-                <div class="imagen2-container justify-content-start mb-5">
-                    <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Claro" class="imagen2-claro ocultar">
-                    <img src="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" alt="Imagen Oscuro" class="imagen2-oscuro ocultar img-fluid">
-                </div>
-            </div>
-            <div class="col-6">
-              <h3 class="title mt-2 ocultar">LÚA CARES</h3>
-            </div>
-            <div class="col-3">
-                <div class="d-flex justify-content-end mt-2">
-                    <label class="toggle-container">
-                        <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
-                        <span class="toggle-slider"></span>
-                        <i class="bi bi-brightness-high toggle-icon light mx-1"></i>
-                        <i class="bi bi-moon toggle-icon dark mx-1"></i>
-                    </label>
-                </div>
-            </div>
-          </div>      
-          <!-- Tercera sección -->
-          <div class="row justify-content-center text-center">
-            <div class="col-md-12 content">             
-              <div class="row justify-content-center text-center container-fluid">
-                <div class="col-md-12 justify-content-center ml-4 text-center">
-                  <h1 class="title main-title">ASESORAMIENTO ENFOCADO EN EL <span class="piel-color">CUIDADO DE TU PIEL</span></h1>                        
-                  <hr/>
-                  <h2 class="text text-justify">¿Cuál es nuestro objetivo?</h2>
-                  <h3 class="text text-justify">En Lua Cares, nos dedicamos a proporcionar asesoramiento y recursos informativos sobre el cuidado de la piel. Nuestra misión es ayudar a las personas a comprender su tipo de piel, desarrollar rutinas efectivas y tomar decisiones informadas sobre productos de skincare antes de su compra. Desde consejos prácticos hasta recomendaciones de productos,<span class="piel-color"> estamos comprometidos a ayudarte a lograr una piel sana y radiante.</span></h3>
-                </div>
-                <img src="https://i.ibb.co/98jXDyg/Imagen2-1.png" alt="imagen2" class="main-image2 mb-3 w-70">
-                <h2 class="title mt-4">¿Conoces tu tipo de piel?</h2>
+        <div class="container-fluid d-flex vh-100 col-md-12 d-flex flex-column">
+          <div class="row">
+            <div class="col-12 p-0">
+              <div class="row container-fluid col-md-12 d-flex flex-column p-2 m-0">
+                  <h2 class="text text-justify font-weight-bold m-0">¿Cuál es nuestro objetivo?</h2>
+                  <h3 class="text text-justify m-0">En Lua Cares, nos dedicamos a proporcionar asesoramiento y recursos informativos sobre el cuidado de la piel. Nuestra misión es ayudar a las personas a comprender su tipo de piel, desarrollar rutinas efectivas y tomar decisiones informadas sobre productos de skincare antes de su compra. Desde consejos prácticos hasta recomendaciones de productos,<span class="piel-color"> estamos comprometidos a ayudarte a lograr una piel sana y radiante.</span></h3>
+                <h2 class="text mt-4 font-weight-bold">¿Conoces tu tipo de piel?</h2>
               </div>
-              <div class="row justify-content-center">
-                <div class="col-md-6">
-                  <div class="mi-boton p-2 mb-2 mx-4 mt-2">
-                    <a href="#" class="btn btn-block px-2 btn-animate text p-0 pt-2">
+              <div class="row">
+                <div class="col-md-6 p-3">
+                  <div class="mi-boton p-2 mt-2">
+                    <a href="#" class="btn btn-block btn-animate text p-0 pt-2">
                       <h3>Si, la conozco</h3>
                     </a>             
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="mi-boton p-2 mb-2 mx-4 mt-2">
-                    <a href="test.html" class="btn btn-block px-2 btn-animate text p-0 pt-2">
+                <div class="col-md-6 p-3">
+                  <div class="mi-boton p-2 mt-2">
+                    <a href="test.html" class="btn btn-block btn-animate text p-0 pt-2">
                       <h3>No estoy seguro(a)</h3>
                     </a>
                   </div>
@@ -76,9 +60,9 @@
           </div>
         </div>
       </div>
-    </div>
-  </div> 
-  <div class="circle-red"></div>
+    </div> 
+  </div>
+  <div class="circle-red sign-up-mode"></div>
   <script src="assets/js/script.js"></script>
 </body>
 </html>

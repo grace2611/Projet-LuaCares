@@ -74,6 +74,8 @@ function mostrarResultado() {
     var div = document.getElementById("tablero");
     div.innerHTML = "";
 
+
+
     // Agregamos los elementos
     div.innerHTML += "<h3 class='resultado_titulo'>RESULTADOS</h3>";
 
@@ -90,12 +92,7 @@ function mostrarResultado() {
         resultado = "<span id='seca'>PIEL SECA</span>";
     }
 
-    div.innerHTML += `
-    <p class='resultado_obtenido'>¡FELICIDADES! Ahora conoces que tu tipo de piel es: ${resultado}.</p> </br> 
-    <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p> 
-    </br> 
-    <a href="test.html" class="btn btn-primary border">QUIERO VOLVER A HACER EL TEST</a> 
-    <a href="rutinas.html" class="btn btn-primary border">AHORA QUIERO UNA RUTINA</a>`;
+    div.innerHTML += `<p class='resultado_obtenido'>¡FELICIDADES! Ahora conoces que tu tipo de piel es: ${resultado}.</p> </br> <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p> </br> <a href="test.html">QUIERO VOLVER A HACER EL TEST</a> <a href="rutinas.html">AHORA QUIERO UNA RUTINA</a>`;
 }
 
 function actualizarPuntaje(opcion) {
@@ -148,4 +145,3 @@ function switchTheme() {
     toggleSwitch.checked = true; 
   }
   switchTheme();
-  

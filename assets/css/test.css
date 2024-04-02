@@ -1,0 +1,22 @@
+#logo-nav {
+    width: 10%;
+    margin-left: 0%;
+}
+
+#barra-progreso {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ddd; /* Color de fondo de la barra de progreso */
+    transition: width 0.3s ease; /* Agregar transición de ancho */
+  }
+  
+  #barra-progreso::-webkit-progress-bar {
+    border-radius: 10px;
+  }
+  
+  #barra-progreso::-webkit-progress-value {
+    border-radius: 10px;
+    background-color: #007bff; /* Color de progreso de la barra */
+  }
+  

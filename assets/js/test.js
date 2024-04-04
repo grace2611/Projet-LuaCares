@@ -77,7 +77,7 @@ function mostrarResultado() {
 
     // Contenido de los resultados
     containerResultado.innerHTML = `
-        <div class="main-container p-0 mt-3 px-4 bg-dark-toggle"> 
+        <div class="main-container p-0 mt-3 px-4"> 
             <div class="row">
                 <div class="col-md-12 border-bottom p-0">
                     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
@@ -128,7 +128,19 @@ function mostrarResultado() {
 
     // Agregamos el contenedor de resultados al contenedor principal
     tablero.appendChild(containerResultado);
+
+    // Agregar evento de cambio al interruptor de modo oscuro/claro
+    const toggleSwitch = document.getElementById('darkModeToggle');
+    toggleSwitch.addEventListener('change', switchTheme);
+
+    // Verificar y aplicar el tema oscuro/claro actual
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        switchTheme(); // Aplicar tema oscuro
+    }
 }
+
 
 
 

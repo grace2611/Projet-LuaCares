@@ -1,22 +1,21 @@
 var imagenes = [
-    ["https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dw0fae9daf/images/quiz/1_Dry.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dw7ee69eb0/images/quiz/1_Oily.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dw8925484f/images/quiz/1_Combo.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dw5f514fbe/images/quiz/1_Normal.jpg"
+    ["https://i.ibb.co/1Xf3wCq/1.png", 
+    "https://i.ibb.co/f8dtyBZ/2.png", 
+    "https://i.ibb.co/5Td1Bt2/3.png", 
+    "https://i.ibb.co/86Dgf5P/4.png"
     ],
-    ["https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dwc7c0dd51/images/quiz/acne.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dw4066c95e/images/quiz/aging.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dwd249b290/images/quiz/uneven.jpg", 
-    "https://www.paulaschoice.com/on/demandware.static/-/Library-Sites-paulachoice/default/dwa22c01d7/images/quiz/sensitive.jpg"],
-    ["assets/img/porc1.jpg", 
-    "assets/img/porc2.jpg",
-    "assets/img/porc3.jpg",
-    "assets/img/porc4.jpg"],
-
-    ["assets/img/porc1.jpg", 
-    "assets/img/porc2.jpg",
-    "assets/img/porc3.jpg",
-    "assets/img/porc4.jpg"]
+    ["https://i.ibb.co/9yFjWbf/5.png", 
+    "https://i.ibb.co/dt6wY7t/6.png", 
+    "https://i.ibb.co/b5LfQZd/7.png", 
+    "https://i.ibb.co/SB3f4jB/8.png"],
+    ["https://i.ibb.co/kD2s9cR/porc1.png", 
+    "https://i.ibb.co/GPv98zV/porc2.png",
+    "https://i.ibb.co/gMf7ntP/porc3.png",
+    "https://i.ibb.co/9GLCTfN/porc-4.png"],
+    ["https://i.ibb.co/kD2s9cR/porc1.png", 
+    "https://i.ibb.co/GPv98zV/porc2.png",
+    "https://i.ibb.co/gMf7ntP/porc3.png",
+    "https://i.ibb.co/9GLCTfN/porc-4.png"],
     
 ];
 var pasos = [
@@ -66,34 +65,72 @@ function mostrarPregunta() {
     document.getElementById("op3").innerHTML = opciones[i][2];
     document.getElementById("op4").innerHTML = opciones[i][3];
     // Actualizamos la barra de progreso
-    document.getElementById("barra-progreso").value = (i + 1) * 100 / imagenes.length;
+    var progressValue = (i + 1) * 100 / imagenes.length;
+    document.getElementById("barra-progreso").value = progressValue;
+    document.getElementById("contador-progreso").textContent = Math.round(progressValue) + "%"; // Actualizamos el contador
 }
 
 function mostrarResultado() {
-    // Limpiamos el tablero de juego
-    var div = document.getElementById("tablero");
-    div.innerHTML = "";
+    // Creamos un nuevo contenedor para los resultados
+    var containerResultado = document.createElement("div");
+    containerResultado.classList.add("container-fluid", "d-flex", "vh-100");
 
+    // Contenido de los resultados
+    containerResultado.innerHTML = `
+        <div class="main-container p-0 mt-3 px-4 bg-dark-toggle"> 
+            <div class="row">
+                <div class="col-md-12 border-bottom p-0">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+                        <div class="container-fluid p-1">
+                            <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" class="mx-4" alt="logo">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav mr-auto mt-2">
+                                    <h5 class="nav-link">LÚA CARES - TEST</h5>
+                                </div>
+                                <div class="navbar-nav">
+                                    <label class="toggle-container m-2">
+                                        <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
+                                        <span class="toggle-slider"></span>
+                                        <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
+                                        <i class="bi bi-moon toggle-icon dark ml-1"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </nav> 
+                </div>
+            </div>
+            <div class="container-fluid d-flex vh-100 col-md-12 d-flex flex-column">
+                <div class="row">
+                    <h3 class='resultado_titulo'>RESULTADOS</h3>
+                    <p class='resultado_obtenido'>
+                        ¡FELICIDADES! Ahora conoces que tu tipo de piel es: 
+                        <span id='resultado'>
+                            ${puntaje >= 20 ? 'PIEL GRASA' : puntaje >= 15 ? 'PIEL MIXTA' : puntaje >= 10 ? 'PIEL NORMAL' : 'PIEL SECA'}
+                        </span>.
+                    </p>
+                    <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p>
+                    <a href="test.html" class="btn">QUIERO VOLVER A HACER EL TEST</a>
+                    <a href="rutinas.html" class="btn">AHORA QUIERO UNA RUTINA</a>
+                </div>
+            </div>
+        </div>
+    `;
 
+    // Obtenemos el contenedor principal
+    var tablero = document.getElementById("tablero");
 
-    // Agregamos los elementos
-    div.innerHTML += "<h3 class='resultado_titulo'>RESULTADOS</h3>";
+    // Limpiamos su contenido actual
+    tablero.innerHTML = '';
 
-    // Evaluamos el estilo de vida según el puntaje
-
-    if (puntaje >= 20) {
-        resultado = "<span id='grasa'>PIEL GRASA</span>";
-    } else if (puntaje >= 15) {
-        resultado = "<span id='mixta'>PIEL MIXTA</span>";
-    }else if( puntaje >= 10) {
-        resultado = "<span id='normal'>PIEL NORMAL</span>";
-
-    }else {
-        resultado = "<span id='seca'>PIEL SECA</span>";
-    }
-
-    div.innerHTML += `<p class='resultado_obtenido'>¡FELICIDADES! Ahora conoces que tu tipo de piel es: ${resultado}.</p> </br> <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p> </br> <a href="test.html">QUIERO VOLVER A HACER EL TEST</a> <a href="rutinas.html">AHORA QUIERO UNA RUTINA</a>`;
+    // Agregamos el contenedor de resultados al contenedor principal
+    tablero.appendChild(containerResultado);
 }
+
+
 
 function actualizarPuntaje(opcion) {
     puntaje += puntajePorOpcion[i][opcion];

@@ -14,30 +14,30 @@
     <div class="container-fluid d-flex vh-100" id="tablero">
         <div class="main-container p-0 mt-3 px-4 bg-dark-toggle"> 
             <div class="row">
-                <nav class="col-md-12 border-bottom p-0">
-                    <div class="container-fluid m-0 p-0">
-                        <div class="row">
-                            <!-- Columna de 6 para la navbar -->
-                            <div class="col-md-10">
-                                <span class="navbar-text ml-0 border">
-                                    <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" alt="logo">
-                                    <span class="navbar-text">
-                                        LÚA CARES - TEST
-                                    </span>
-                                </span>
-                            </div>
-                            <!-- Columna de 6 para el label -->
-                            <div class="col-md-2 border">
-                                <label class="toggle-container m-2">
-                                    <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
-                                    <span class="toggle-slider"></span>
-                                    <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
-                                    <i class="bi bi-moon toggle-icon dark ml-1"></i>
-                                </label>
+                <div class="col-md-12 border-bottom p-0">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+                        <div class="container-fluid p-1">
+                            <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" class="mx-4" alt="logo">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav mr-auto mt-2">
+                                    <h5 class="nav-link">LÚA CARES - TEST</h5>
+                                </div>
+                                <div class="navbar-nav">
+                                    <label class="toggle-container m-2">
+                                        <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
+                                        <span class="toggle-slider"></span>
+                                        <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
+                                        <i class="bi bi-moon toggle-icon dark ml-1"></i>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                    
+                </div>
                 <div class="container-fluid d-flex vh-100 col-md-12 d-flex flex-column">
                     <div class="row">
                         <div class="col-12 p-2">
@@ -49,9 +49,6 @@
                                     </div>
                                     <div id="pregunta">
                                         <p>Lávese la cara con un limpiador suave y espere de 15 a 30 minutos. Haga clic en el icono que coincida con lo que ve.</p>
-                                    </div>
-                                    <div class="avance">
-                                        <progress id="barra-progreso" max="100" value="70">70%</progress>
                                     </div>
                                 </section>
                                 <!-- Segunda sección: 9 columnas -->
@@ -103,6 +100,11 @@
                                         </div>
                                     </div>
                                 </section>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="avance">
+                                <progress id="barra-progreso" max="100" value="0">0%</progress>
                             </div>
                         </div>
                     </div>

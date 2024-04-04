@@ -1,22 +1,34 @@
 #logo-nav {
-    width: 10%;
-    margin-left: 0%;
+  width: 5%;
+}
+#barra-progreso {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0; 
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
 }
 
-#barra-progreso {
-    width: 100%;
-    height: 20px;
-    border-radius: 10px;
-    background-color: #ddd; /* Color de fondo de la barra de progreso */
-    transition: width 0.3s ease; /* Agregar transición de ancho */
-  }
-  
-  #barra-progreso::-webkit-progress-bar {
-    border-radius: 10px;
-  }
-  
-  #barra-progreso::-webkit-progress-value {
-    border-radius: 10px;
-    background-color: #007bff; /* Color de progreso de la barra */
-  }
-  
+#barra-progreso::-webkit-progress-value {
+  border-radius: 10px;
+  background-color: #007bff;
+  transition: width 0.5s; /* Agregamos transición para suavizar el cambio de ancho */
+}
+
+#barra-progreso::after {
+  content: attr(value) "%";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  z-index: 1; 
+  left: 0;
+  transition: left 0.5s ease-in-out;
+}
+
+

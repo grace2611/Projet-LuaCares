@@ -1,50 +1,145 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LÚA CARES</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Navbar Fijo</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/test.css">
-    <link rel="icon" href="https://i.ibb.co/CWPVLcJ/flor-de-loto.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #343a402b;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            margin-right: 0.5rem;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-checkbox {
+            display: none;
+        }
+
+        .toggle-slider {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: #35087e20;
+            border-radius: 20px;
+            margin-left: 1rem;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: '';
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        .toggle-checkbox:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+
+        .toggle-checkbox:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+        }
+
+        .main-container {
+            padding-top: 60px;
+        }
+
+        .wrapper {
+            overflow-y: auto;
+            height: calc(100vh - 60px);
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container-fluid d-flex vh-100" id="tablero">
-    <div class="main-container p-0 mt-3 px-4 bg-dark-toggle"> 
-      <div class="row">
-        <div class="col-md-12 border-bottom p-0">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
-            <div class="container-fluid p-1">
-              <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" class="mx-4" alt="logo">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav mr-auto mt-2">
-                      <h5 class="nav-link">LÚA CARES - TEST</h5>
-                  </div>
-                  <div class="navbar-nav">
-                      <label class="toggle-container m-2">
-                          <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
-                          <span class="toggle-slider"></span>
-                          <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
-                          <i class="bi bi-moon toggle-icon dark ml-1"></i>
-                      </label>
-                  </div>
-              </div>
+    <div class="main-container p-0 mt-2 px-4 bg-dark-toggle">
+        <div class="row">
+            <div class="col-md-12 border-bottom p-0">
+                <nav class="navbar navbar-expand-lg p-0">
+                    <div class="container-fluid p-1">
+                        <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" class="navbar-brand mx-4" alt="logo">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav mr-auto mt-2">
+                                <h5 class="nav-link">LÚA CARES - TEST</h5>
+                            </div>
+                            <div class="navbar-nav">
+                                <label class="toggle-container m-2">
+                                    <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
+                                    <span class="toggle-slider"></span>
+                                    <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
+                                    <i class="bi bi-moon toggle-icon dark ml-1"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
-          </nav> 
+            <div class="main-container wrapper">
+                <div class="content">
+                    <h3>ELIGE EN QUÉ QUIERES QUE TE ASESOREMOS</h3>
+                    <section>
+                        <div>
+                            <a href="pieles.html"> RUTINA DE MAÑANA</a>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxUpaTJjN0XEG2pKrPJs121Dco6yln2bRNJ16nYeIG9Q&s">
+                            <br>
+                            <p>La rutina matutina se centra principalmente en preparar la piel para el día y proporcionar protección contra los elementos ambientales. Suele incluir limpieza, hidratación y protección solar. Además, puede incorporar ingredientes para iluminar la piel y estimular la producción de colágeno.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <a href="pieles.html"> RUTINA DE NOCHE</a>
+                            <img src="https://cdn-icons-png.flaticon.com/512/7204/7204190.png">
+                            <br>
+                            <p>La rutina nocturna se centra en la reparación y regeneración de la piel durante el período de descanso. Se utiliza para limpiar profundamente la piel y aplicar tratamientos específicos que promuevan la renovación celular y aborden problemas específicos de la piel como el acné, la pigmentación o las arrugas.</p>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <a href="">QUIERO UNICAMENTE INFORMACIÓN DE PRODUCTOS</a>
+                            <img src="https://static.vecteezy.com/system/resources/previews/009/341/525/non_2x/information-sign-icon-design-free-png.png">
+                            <br>
+                            <p>Te ofrecemos una API de productos del cuidado de la piel sin necesidad de especificar tus necesidades, puedes buscar datos como el precio, dónde comprarlo y características.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-        <div class="container-fluid d-flex vh-100 col-md-12 d-flex flex-column">
-          <div class="row">
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-  <div class="circle-red sign-up-mode"></div>
-  <script src="assets/js/test.js"></script>
+    </div>
 </body>
 </html>

@@ -21,3 +21,4 @@ if (currentTheme === 'dark') {
   toggleSwitch.checked = true; 
 }
 switchTheme();
+

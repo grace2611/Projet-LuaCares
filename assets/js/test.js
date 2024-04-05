@@ -18,6 +18,7 @@ var imagenes = [
     "https://i.ibb.co/9GLCTfN/porc-4.png"],
     
 ];
+
 var pasos = [
     "PASO 1",
     "PASO 2",
@@ -65,84 +66,34 @@ function mostrarPregunta() {
     document.getElementById("op3").innerHTML = opciones[i][2];
     document.getElementById("op4").innerHTML = opciones[i][3];
     // Actualizamos la barra de progreso
-    var progressValue = (i + 1) * 100 / imagenes.length;
-    document.getElementById("barra-progreso").value = progressValue;
-    document.getElementById("contador-progreso").textContent = Math.round(progressValue) + "%"; // Actualizamos el contador
+    document.getElementById("barra-progreso").value = (i + 1) * 100 / imagenes.length;
 }
 
 function mostrarResultado() {
-    // Creamos un nuevo contenedor para los resultados
-    var containerResultado = document.createElement("div");
-    containerResultado.classList.add("container-fluid", "d-flex", "vh-100");
+    // Limpiamos el tablero de juego
+    var div = document.getElementById("tablero");
+    div.innerHTML = "";
 
-    // Contenido de los resultados
-    containerResultado.innerHTML = `
-        <div class="main-container p-0 mt-3 px-4"> 
-            <div class="row">
-                <div class="col-md-12 border-bottom p-0">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
-                        <div class="container-fluid p-1">
-                            <img id="logo-nav" src="https://cdn-icons-png.flaticon.com/512/5403/5403989.png" class="mx-4" alt="logo">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                <div class="navbar-nav mr-auto mt-2">
-                                    <h5 class="nav-link">LÚA CARES - TEST</h5>
-                                </div>
-                                <div class="navbar-nav">
-                                    <label class="toggle-container m-2">
-                                        <input type="checkbox" class="toggle-checkbox" id="darkModeToggle">
-                                        <span class="toggle-slider"></span>
-                                        <i class="bi bi-brightness-high toggle-icon light ml-4"></i>
-                                        <i class="bi bi-moon toggle-icon dark ml-1"></i>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </nav> 
-                </div>
-            </div>
-            <div class="container-fluid d-flex vh-100 col-md-12 d-flex flex-column">
-                <div class="row">
-                    <h3 class='resultado_titulo'>RESULTADOS</h3>
-                    <p class='resultado_obtenido'>
-                        ¡FELICIDADES! Ahora conoces que tu tipo de piel es: 
-                        <span id='resultado'>
-                            ${puntaje >= 20 ? 'PIEL GRASA' : puntaje >= 15 ? 'PIEL MIXTA' : puntaje >= 10 ? 'PIEL NORMAL' : 'PIEL SECA'}
-                        </span>.
-                    </p>
-                    <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p>
-                    <a href="test.html" class="btn">QUIERO VOLVER A HACER EL TEST</a>
-                    <a href="rutinas.html" class="btn">AHORA QUIERO UNA RUTINA</a>
-                </div>
-            </div>
-        </div>
-    `;
 
-    // Obtenemos el contenedor principal
-    var tablero = document.getElementById("tablero");
 
-    // Limpiamos su contenido actual
-    tablero.innerHTML = '';
+    // Agregamos los elementos
+    div.innerHTML += "<h3 class='resultado_titulo'>RESULTADOS</h3>";
 
-    // Agregamos el contenedor de resultados al contenedor principal
-    tablero.appendChild(containerResultado);
+    // Evaluamos el estilo de vida según el puntaje
 
-    // Agregar evento de cambio al interruptor de modo oscuro/claro
-    const toggleSwitch = document.getElementById('darkModeToggle');
-    toggleSwitch.addEventListener('change', switchTheme);
+    if (puntaje >= 20) {
+        resultado = "<span id='grasa'>PIEL GRASA</span>";
+    } else if (puntaje >= 15) {
+        resultado = "<span id='mixta'>PIEL MIXTA</span>";
+    }else if( puntaje >= 10) {
+        resultado = "<span id='normal'>PIEL NORMAL</span>";
 
-    // Verificar y aplicar el tema oscuro/claro actual
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-        switchTheme(); // Aplicar tema oscuro
+    }else {
+        resultado = "<span id='seca'>PIEL SECA</span>";
     }
+
+    div.innerHTML += `<p class='resultado_obtenido'>¡FELICIDADES! Ahora conoces que tu tipo de piel es: ${resultado}.</p> </br> <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p> </br> <a href="test.html">QUIERO VOLVER A HACER EL TEST</a> <a href="rutinas.html">AHORA QUIERO UNA RUTINA</a>`;
 }
-
-
-
 
 function actualizarPuntaje(opcion) {
     puntaje += puntajePorOpcion[i][opcion];
@@ -170,27 +121,3 @@ document.getElementById("op3").addEventListener("click", function () {
 document.getElementById("op4").addEventListener("click", function () {
     actualizarPuntaje(3);
 });
-
-// MODO OSCURO/CLARO
-function switchTheme() {
-    const toggleSwitch = document.getElementById('darkModeToggle');
-    const container = document.querySelector(".circle-red");
-    
-    if (toggleSwitch.checked) {
-      document.querySelector('.main-container').classList.add('bg-dark-toggle');
-      container.classList.add("sign-up-mode");
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.querySelector('.main-container').classList.remove('bg-dark-toggle');
-      container.classList.remove("sign-up-mode");
-      localStorage.setItem('theme', 'light');
-    }
-  }
-  
-  const toggleSwitch = document.getElementById('darkModeToggle');
-  toggleSwitch.addEventListener('change', switchTheme);
-  const currentTheme = localStorage.getItem('theme');
-  if (currentTheme === 'dark') {
-    toggleSwitch.checked = true; 
-  }
-  switchTheme();

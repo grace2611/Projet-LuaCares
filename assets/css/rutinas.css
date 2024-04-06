@@ -1,35 +1,14 @@
-.wrapper::-webkit-scrollbar {
-    width: 10px; 
+img{
+    width: 70px;
+    height: auto;
 }
 
-.wrapper::-webkit-scrollbar-track {
-    background-image: radial-gradient(circle at center, #eed79c86, #e5ddc879);
+.text {
+  font-size: 20px;
 }
 
-.wrapper::-webkit-scrollbar-thumb {
-    background: #eed79cb8;
-    border-radius: 100px;
+/* Estilos para el botón de radio */
+input[type="radio"] {
+  display: none; /* Oculta el botón de radio */
 }
 
-.wrapper::-webkit-scrollbar-thumb:hover {
-    background: #eed79cf6;
-}
-
-.navbar {
-    z-index: 1000;
-    background-color: #ffffff22;
-    backdrop-filter: blur(60px);
-}
-
-.wrapper {
-    overflow-y: auto;
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    max-height: 100%; 
-    padding-top: 8%;
-}
-
-.main-container{
-    overflow-y: hidden;
-}

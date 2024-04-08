@@ -1,20 +1,18 @@
 #logo-nav {
   width: 5%;
 }
-#barra-progreso {
-  width: 100%;
-  height: 20px;
-  border-radius: 10px;
-  background-color: #f0f0f0; 
-  position: relative;
-  overflow: hidden;
-  transition: width 0.5s ease-in-out;
+.navbar{
+  background: #ffcfa035;
 }
 
 #barra-progreso::-webkit-progress-value {
   border-radius: 10px;
-  background-color: #007bff;
-  transition: width 0.5s; /* Agregamos transición para suavizar el cambio de ancho */
+  background: linear-gradient(90deg, #dfbe93, #d8a040);
+  transition: width 0.5s;
+}
+
+#barra-progreso::-webkit-progress-bar {
+  background-color: #e0c79a93; 
 }
 
 #barra-progreso::after {
@@ -31,4 +29,50 @@
   transition: left 0.5s ease-in-out;
 }
 
+.avance {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  width: 90%; 
+}
 
+.opcion, .subopcion{
+  height: 100%;
+}
+
+#barra-progreso {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0; 
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+
+.resultado_obtenido {
+  display: inline-block; 
+}
+
+.nav-link {
+  font-size: 32px;
+}
+
+.primer-boton{
+  width: 100%;
+}
+
+.segundo-boton{
+  width: 100%;
+}
+
+#resultado1{
+  background: #de90591d;
+  border-radius: 20px;
+}
+
+.resultado_titulo {
+  background-image: linear-gradient(to right, #e1cab3, #e3a866); 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 1px rgb(61, 61, 61);  
+}

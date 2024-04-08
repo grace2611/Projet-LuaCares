@@ -28,7 +28,7 @@ var pasos = [
 
 var preguntas = [
     "Lávese la cara con un limpiador suave y espere de 15 a 30 minutos. Haga clic en el icono que coincida con lo que ve.",
-    "¿Cuál es tu principal preocupación? o ¿Con cuál te sientes más identificada? ",
+    "¿Cuál es tu principal preocupación? ó </br> ¿Con cuál te sientes más identificada? ",
     "¿Qué tan a menudo sientes la necesidad de aplicar crema hidratante durante el día?",
     "¿Cómo reacciona tu piel ante los productos nuevos o diferentes?"
 ]
@@ -74,37 +74,65 @@ function mostrarResultado() {
     var div = document.getElementById("tablero");
     div.innerHTML = "";
 
-
-
     // Agregamos los elementos
-    div.innerHTML += "<h3 class='resultado_titulo'>RESULTADOS</h3>";
-
+    div.innerHTML += `
+            <div class="row">
+                <div class="col-md-1 justify-content-start">
+                    <h4 class='text text-3 mt-3'>RESULTADOS:</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h4 class='resultado_titulo text-6 title'>¡FELICIDADES!</h4>
+                </div>
+            </div>
+    `;
     // Evaluamos el estilo de vida según el puntaje
-
     if (puntaje >= 20) {
         resultado = "<span id='grasa'>PIEL GRASA</span>";
     } else if (puntaje >= 15) {
         resultado = "<span id='mixta'>PIEL MIXTA</span>";
     }else if( puntaje >= 10) {
         resultado = "<span id='normal'>PIEL NORMAL</span>";
-
     }else {
         resultado = "<span id='seca'>PIEL SECA</span>";
     }
 
     div.innerHTML += `
-    <p class='resultado_obtenido'>¡FELICIDADES! Ahora conoces que tu tipo de piel es: ${resultado}.</p>
-    <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p>
-    <div class="row">
-      <div class="col-md-6">
-        <a href="test.html" class="btn btn-block">QUIERO VOLVER A HACER EL TEST</a>
-      </div>
-      <div class="col-md-6">
-        <a href="rutinas.html" class="btn btn-block">AHORA QUIERO UNA RUTINA</a>
-      </div>
+    <div class="container-resultado text-3">
+        <div class="row">
+            <div class="col-md-12 title">
+                <p class='resultado_obtenido p-2 px-4 mr-4 text' id="resultado1">Ahora conoces que tu tipo de piel es:</p>
+                <p class='resultado_obtenido piel-color text-4' id="resultado2"><span id="resultado">${resultado}</span>.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 text m-3">
+                <p>¡Gracias por completar el LÚA CARES - TEST! Recuerda, cada tipo de piel es hermoso y único. No importa cuál sea tu resultado, estamos aquí para ayudarte a cuidar tu piel y hacerla brillar. Juntos, podemos lograr una piel radiante y saludable que te haga sentir seguro/a y feliz. ¡Estamos aquí para ti!</p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-4 mi-boton p-2 mx-3">
+                <a href="test.html" class="btn primer-boton btn-animate text p-2 pt-2 text-3">QUIERO VOLVER A HACER EL TEST</a>
+            </div>
+            <div class="col-md-4 mi-boton p-2 mx-3">
+                <a href="rutinas.html" class="btn segundo-boton btn-animate text p-2 pt-2 text-3">AHORA QUIERO UNA RUTINA</a>
+            </div>
+        </div>
     </div>
   `;
-  }
+
+  // Código para la animación del segundo resultado obtenido
+  const resultado2Element = document.getElementById('resultado2');
+
+  const resultado2Animation = resultado2Element.animate(
+    [
+      { transform: 'translateX(-50%) scale(1)', opacity: 0 },
+      { transform: 'translateX(0%) scale(1)', opacity: 1 }
+    ],
+    { duration: 990, fill: 'forwards' }
+  );
+}
 
 function actualizarPuntaje(opcion) {
     puntaje += puntajePorOpcion[i][opcion];
